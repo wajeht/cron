@@ -1,16 +1,16 @@
 {
   "name": "cron",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Cron Scheduler with FastQ and PM2",
   "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "npm run clean && node --watch index.js",
     "clean": "rm -rf ./logs/*.log"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["node-cron", "fastq", "pm2"],
+  "author": "wajeht",
+  "license": "MIT",
   "dependencies": {
     "fastq": "^1.15.0",
     "node-cron": "^3.0.2"
