@@ -15,7 +15,7 @@ fi
 # 30 days * 24 hours * 60 minutes * 60 seconds * 1000 milliseconds
 KILL_TIMEOUT_MS=$((30 * 24 * 60 * 60 * 1000))
 
-pm2 start ./index.js --name cron --kill-timeout $KILL_TIMEOUT_MS
+pm2 start ./src/index.js --name cron --kill-timeout $KILL_TIMEOUT_MS
 pm2 startup
 pm2 save --force
 

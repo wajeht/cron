@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "description": "Cron Scheduler with FastQ and PM2",
   "type": "module",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
-    "dev": "npm run clean && node --watch index.js",
+    "dev": "npm run clean && node --watch ./src/index.js",
     "clean": "rm -rf ./logs/*.log"
   },
   "keywords": ["node-cron", "fastq", "pm2"],
