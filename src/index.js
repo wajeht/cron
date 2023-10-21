@@ -5,16 +5,16 @@ import path from 'path';
 const worker = fork(path.resolve('src', 'worker.js'));
 
 function getCronExpression(time, unit) {
-  let cronExpression;
-  switch (unit) {
-    case 'second':
-      cronExpression = `*/${time} * * * * *`;
-      break;
-    case 'minute':
-      cronExpression = `0 */${time} * * * *`;
-      break;
-  }
-  return cronExpression;
+  const unitToCronMap = {
+    'second': `*/%s * * * * *`,
+    'minute': `0 */%s * * * *`,
+    'hour': `0 0 */%s * * *`,
+    'day': `0 0 0 */%s * *`,
+    'week': `0 0 0 ? * %s`,
+    'month': `0 0 0 1 */%s ?`
+  };
+  const cronTemplate = unitToCronMap[unit];
+  return cronTemplate ? cronTemplate.replace('%s', time) : '';
 }
 
 function main() {
