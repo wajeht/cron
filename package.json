@@ -1,7 +1,7 @@
 {
   "name": "cron",
   "version": "0.0.1",
-  "description": "Cron Scheduler with FastQ and PM2",
+  "description": "Cron Scheduler with FastQ, Fork and PM2",
   "type": "module",
   "main": "./src/index.js",
   "scripts": {

@@ -1,5 +1,5 @@
-## Cron Scheduler with FastQ and PM2
-This project uses `node-cron`, `fastq`, and `PM2` to schedule cron jobs, process tasks in a queue, and manage the application, respectively.
+## Cron Scheduler with FastQ, Fork and PM2
+This project uses node-cron, fastq, child_process.fork, and PM2 to schedule cron jobs, process tasks in a queue, run tasks in child processes, and manage the application, respectively.
 
 ### Installation
 Clone the repository:
@@ -25,12 +25,13 @@ $ ./start.sh
 - **node-cron:** Schedules cron jobs in Node.js.
 - **fastq:** Manages a queue of tasks with variable concurrency.
 - **PM2:** Process manager to keep your application running.
+- **child_process.fork:** Runs tasks in child processes for improved performance.
 
 ### Configuration
 Update the `schedules` array in `index.js` to change the cron schedules.
 Modify the FastQ concurrency setting to change the number of tasks executed in parallel.
 ```javascript
-const logQueue = fastq.promise(logWorker, 10); // Concurrency set to 10
+const queue = fastq.promise(logWorker, 10); // Concurrency set to 10
 ```
 
 ### Logs
