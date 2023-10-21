@@ -4,7 +4,7 @@ This project uses node-cron, fastq, child_process.fork, and PM2 to schedule cron
 ### Installation
 Clone the repository:
 ```bash
-git clone https://github.com/wajeht/cron.git
+$ git clone https://github.com/wajeht/cron.git
 ```
 
 ### Install dependencies:
