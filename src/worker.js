@@ -2,8 +2,7 @@ import path from 'path';
 import fs from 'fs/promises';
 import fastq from 'fastq';
 
-async function worker(task) {
-  const { time, unit } = task;
+async function worker({ time, unit }) {
   const timestamp = new Date().toISOString();
   const name = `${time}-${unit}-at-${timestamp}.log`;
   const filepath = path.resolve('logs', name);
@@ -14,6 +13,6 @@ async function worker(task) {
 
 const queue = fastq.promise(worker, 1);
 
-process.on('message', function(message) {
+process.on('message', function (message) {
   queue.push(message);
 });

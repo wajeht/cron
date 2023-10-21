@@ -1,11 +1,8 @@
 import { fork } from 'child_process';
-import { fileURLToPath } from 'url';
 import cron from 'node-cron';
 import path from 'path';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const worker = fork(path.resolve(__dirname, 'worker.js'));
+const worker = fork(path.resolve('src', 'worker.js'));
 
 function getCronExpression(time, unit) {
   let cronExpression;
