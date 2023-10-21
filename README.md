@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/wajeht/cron/main/.github/screenshot.png" width="100%" />
+<img src="https://raw.githubusercontent.com/wajeht/cron/main/.github/screenshot.png" width="50%" />
 
 ## Cron Scheduler with FastQ, Fork and PM2
 This project uses node-cron, fastq, child_process.fork, and PM2 to schedule cron jobs, process tasks in a queue, run tasks in child processes, and manage the application, respectively.
